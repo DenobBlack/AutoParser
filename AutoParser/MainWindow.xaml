@@ -1,0 +1,63 @@
+﻿<Window x:Class="AutoParser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoParser"
+        mc:Ignorable="d"
+        Title="Сервисное меню" MinHeight="600" MinWidth="1000" Background="#F5F6F8" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+
+
+
+        <!-- LEFT MENU -->
+        <StackPanel x:Name="MenuPanel" Width="200" Background="#1F2933">
+            <DockPanel LastChildFill="False">
+
+                <TextBlock Text="Тойота"
+               Name="LogoBlock"
+               Foreground="White"
+               FontSize="22"
+               Margin="10"
+               DockPanel.Dock="Left"/>
+
+                <Button DockPanel.Dock="Right"
+            Content="☰"
+                        Width="50"
+                       FontSize="20"
+            VerticalAlignment="Center"
+            Style="{StaticResource MenuButton}"
+            Click="ToggleMenu"/>
+            </DockPanel>
+            <Button x:Name="BtnCreateTO" Style="{StaticResource MenuButton}" Margin="10" Click="OpenCreateTO_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Border x:Name="IndicatorCreateTO"
+                Width="4"
+                Background="#EB0A1E"
+                HorizontalAlignment="Left"
+                Visibility="Collapsed"/>
+                    <TextBlock Text="Создание ТО" x:Name="CreateToText"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="BtnCars" Style="{StaticResource MenuButton}" Margin="10" Click="OpenCars_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Автомобили" x:Name="CarsText"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="BtnParts" Style="{StaticResource MenuButton}" Margin="10" Click="OpenParts_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Каталог деталей" x:Name="PartsText"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="BtnOrders" Style="{StaticResource MenuButton}" Margin="10" Click="OpenOrders_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Заказы" x:Name="OrdersText"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <!-- MAIN AREA -->
+
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Background="#F5F6F8"/>
+    </DockPanel>
+</Window>

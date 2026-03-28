@@ -1,0 +1,12 @@
+﻿version: '3.9'
+services:
+  autoservice-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: autoservice_app
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DOTNET_ENVIRONMENT=Production
+    restart: unless-stopped
